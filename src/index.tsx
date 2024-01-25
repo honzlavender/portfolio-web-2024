@@ -1,16 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { StrictMode } from "react";
+import * as ReactDOMClient from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import "./resources/fonts/Faster_One/FasterOne-Regular.ttf";
+import "./resources/fonts/Bagel_Fat_One/BagelFatOne-Regular.ttf";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+const root = ReactDOMClient.createRoot(
+  document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>
+  </StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
