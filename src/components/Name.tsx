@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { trolls } from "./styles/styles";
 const Name = () => {
   const title = "Honz Williams";
-  const colors = ["red", "green", "blue", "orange", "purple"];
+  // const colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+  const colors = trolls.map((color) => color.color);
 
   const styledText = title.split("").map((letter, index) => (
     <span key={index} style={{ color: colors[index % colors.length] }}>
@@ -18,10 +20,11 @@ const Name = () => {
 
 export default Name;
 
-const Header = styled.div `
-justify-content: center;
-text-align: center;
-align-items: center;
-font-size: 100px;
-font-family: BagelFat;
-`
+const Header = styled.div`
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 6rem;
+  margin-bottom: 5vh;
+  font-family: BagelFat;
+`;
