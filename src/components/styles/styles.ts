@@ -11,7 +11,7 @@ export const trolls = [
     color: "#FE8415",
   },
   {
-    title: "professional work",
+    title: "tech projects",
     color: "#F0CE0B",
   },
   {
@@ -31,10 +31,8 @@ export const trolls = [
 export const container = css`
 position: fixed;
 left: 50%;
-transform: translateX(-50%);
+transform: translate(-50%);
 display: flex;
-align-items: center;
-justify-content: center;
 `;
 
 export const center = css`

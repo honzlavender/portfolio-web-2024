@@ -24,7 +24,6 @@ const Header = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
-  font-size: 6rem;
-  margin-bottom: 5vh;
+  font-size: 14vw;
   font-family: BagelFat;
 `;

@@ -5,8 +5,9 @@ import { pieTheme } from "./styles/pieTheme";
 import { Bottomsheet } from "./Bottomsheet";
 import { useClickAway } from "@uidotdev/usehooks";
 import { trolls } from "./styles/styles";
+import { ResumeSlice } from "./Slice";
 
-const Menu = ({ x, y }: { x: number; y: number }) => {
+const Menu = ({ x, y }: { x: string; y: string }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedSlice, setSelectedSlice] = useState<string>("");
   const ref = useClickAway(() => {
@@ -29,10 +30,17 @@ const Menu = ({ x, y }: { x: number; y: number }) => {
     </div>
   );
 
+  const renderContent = () => {
+    switch (selectedSlice) {
+      case 'resume':
+        return <ResumeSlice />
+    }
+  }
+
   return (
     <Container>
       <ThemeProvider theme={pieTheme}>
-        <PieMenu radius="300px" centerRadius="100px" centerX={10} centerY={10}>
+        <PieMenu radius="225px" centerRadius="70px" centerX={x} centerY={y}>
           {trolls.map((item) => (
             <Slice
               key={item.title}
@@ -48,7 +56,7 @@ const Menu = ({ x, y }: { x: number; y: number }) => {
         <>
           <Overlay />
           <div ref={ref as any}>
-            <Bottomsheet isOpen={isOpen} children={currentSlice} />
+            <Bottomsheet isOpen={isOpen} children={renderContent()} />
           </div>
         </>
       )}
@@ -57,8 +65,9 @@ const Menu = ({ x, y }: { x: number; y: number }) => {
 };
 
 const Container = styled.div`
-  display: flex;
-  justify-content: center;
+  // position: fixed;
+  // width: 100%;
+  // height: 100%;
 `;
 
 const Overlay = styled.div`

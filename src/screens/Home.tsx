@@ -6,7 +6,7 @@ import "./home.css";
 
 const Home = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-// eslint-disable-next-line
+  // eslint-disable-next-line
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
   };
@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <HomeContainer>
       <Name />
-      <Menu x={0} y={0} />
+      <Menu x={""} y={""} />
     </HomeContainer>
   );
 };
